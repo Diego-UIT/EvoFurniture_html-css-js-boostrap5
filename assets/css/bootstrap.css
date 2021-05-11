@@ -597,8 +597,8 @@ progress {
 .container-md,
 .container-sm {
   width: 100%;
-  padding-right: var(--bs-gutter-x, 4.75rem);
-  padding-left: var(--bs-gutter-x, 4.75rem);
+  padding-right: var(--bs-gutter-x, 1.75rem);
+  padding-left: var(--bs-gutter-x, 1.75rem);
   margin-right: auto;
   margin-left: auto;
 }
@@ -2930,7 +2930,6 @@ textarea.form-control-lg {
 }
 .btn-check:focus + .btn, .btn:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .btn:disabled, .btn.disabled, fieldset:disabled .btn {
   pointer-events: none;

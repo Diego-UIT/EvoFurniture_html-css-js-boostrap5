@@ -9,6 +9,33 @@ openMegaMenu.hover(() => {
 })
 
 // =============================================
+// NEW-PRODUCT & FURNITURE-WOOD - OWL CAROUSEL
+// =============================================
+const owlNewProduct =  $(".owl-product")
+
+owlNewProduct.owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+        },
+        400:{
+            items:2,
+        },
+        600:{
+            items:3,
+        },
+        1000:{
+            items:4,
+            loop:false
+        }
+    }
+})
+
+
+// =============================================
 // BLOGS - OWL CAROUSEL
 // =============================================
 const owlBlogs =  $(".owl-carousel.owl-blogs")
@@ -23,11 +50,11 @@ owlBlogs.owlCarousel({
             nav:true
         },
         300:{
-            items:2,
+            items:1,
             nav:true
         },
         600:{
-            items:3,
+            items:2,
             nav:true
         },
         1000:{
@@ -49,11 +76,11 @@ owlBrand.owlCarousel({
     responsiveClass:true,
     responsive:{
         0:{
-            items:1,
+            items:3,
             nav:true,
         },
         600:{
-            items:3,
+            items:5,
             nav:true,
         },
         1000:{
@@ -116,21 +143,3 @@ $( function() {
   } );
 
   
-// =============================================
-// M-MENU
-// =============================================
-// document.addEventListener(
-//     "DOMContentLoaded", () => {
-//         new Mmenu( "#my-menu", {
-//            "slidingSubmenus": true,
-//            "navbars": [
-//               {
-//                  "position": "top",
-//                  "content": [
-//                     "searchfield"
-//                  ]
-//               }
-//            ]
-//         });
-//     }
-// );

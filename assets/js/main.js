@@ -8,6 +8,12 @@ openMegaMenu.hover(() => {
     menuMega.toggle()
 })
 
+const openMenuBar = $('#intro-page')
+const menuBar =  $('.nav-cate')
+openMenuBar.hover(() => {
+    menuBar.toggle()
+})
+
 // =============================================
 // NEW-PRODUCT & FURNITURE-WOOD - OWL CAROUSEL
 // =============================================

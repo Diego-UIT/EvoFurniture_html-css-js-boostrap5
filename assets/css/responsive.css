@@ -1,4 +1,5 @@
 @media (max-width: 1024px) {
+    
     .header .evo-main-nav .main-menu {
         margin-top: 10px;
     }
@@ -14,6 +15,7 @@
 }
 
 @media (max-width: 991px) {
+    
 
     /* MOBILE MENU NAV  */
     .toggle-menu-button .line {
@@ -128,10 +130,11 @@
         line-height: 22px;
         font-size: 11px;
     }
+
 }
 
 @media (max-width: 767px) {
-
+    
     .logo img {
         max-height: 55px !important;
     }

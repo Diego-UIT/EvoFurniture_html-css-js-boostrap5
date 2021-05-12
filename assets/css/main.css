@@ -4,14 +4,21 @@
 
         00. ROOT-BASE
         01. HEADER
-        02. SECTION-1
-        03. SECTION-2
-        04. SECTION-3
-        05. SECTION-4
-        06. SECTION-5
-        07. SECTION-6
-        08. SECTION-7
-        09. FOOTER
+        02. SECTIONS
+        -- 02.1 SECTION-1
+        -- 02.2 SECTION-2
+        -- 02.3 SECTION-3
+        -- 02.4 SECTION-4
+        -- 02.5 SECTION-5
+        -- 02.6 SECTION-6
+        -- 02.7 SECTION-7
+        03. PAGES
+        -- 03.1 GIOI-THIEU
+        -- 03.2 LIEN HE
+        -- 03.3 DANG NHAP
+        -- 03.4 DANG KY
+        -- 03.5 SAN PHAM
+        04. FOOTER
 
 ============================================================= */
 
@@ -84,7 +91,7 @@ html {
 
 .header .evo-header-logo-search-cart .row {
     align-items: center;
-    margin-top: 10px;
+    margin: 15px 0;
 }
 .header .evo-header-logo-search-cart .logo img {
     max-height: 65px;
@@ -188,7 +195,6 @@ html {
 .header .evo-main-nav .main-menu {
     box-shadow: 0 0 4px 0 rgb(0 0 0 / 20%);
     position: relative;
-    margin-top: 15px;
 }
 
 .header .evo-main-nav .main-menu span {
@@ -1347,4 +1353,308 @@ html {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+}
+
+/* ==== [GIOI-THIEU PAGE] ==== */
+#intro-page .nav-cate {
+    display: none;
+}
+
+.bread-crump {
+    padding: 14px 0 7px 0;
+    margin: 0;
+    border-bottom: 1px solid #f5f5f5;
+    border-top: 1px solid #f5f5f5;
+}
+
+.bread-crump .breadcrumb .breadcrumb-item {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color-black);
+}
+
+.bread-crump .breadcrumb .breadcrumb-item a {
+    text-decoration: none;
+    font-weight: normal;
+    color: var(--text-color-black);
+}
+
+.page-intro .page-intro-title {
+    margin-top: 15px;
+}
+
+.page-intro .page-intro-title .title-head a {
+    font-size: 2rem;
+    color: var(--text-color-black);
+    text-decoration: none;
+    transition: all .3s ease;
+} 
+
+.page-intro .page-intro-title .title-head a:hover {
+    color: var(--orange-color);
+}
+
+.page-intro .page-intro-content h3 {
+    font-size: 2.3rem;
+    margin: 15px 0 15px 0;
+    letter-spacing: 1px;
+}
+
+.page-intro .page-intro-content p {
+    margin: 0 0 15px 0;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+/* ==== [LOGIN PAGE & REGISTER] ==== */
+.page-login {
+    max-width: 750px;
+    margin: auto;
+}
+
+.page-login 
+.page-login-title,
+.page-login-social {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-login .page-login-title .title-head {
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page-login .page-login-social .social-login {
+    display: inline-block;
+    transition: all 150ms ease-in-out;
+}
+
+.page-login .page-login-social .social-login:nth-child(2) {
+    margin-left: 10px;
+}
+
+.page-login .page-login-social .social-login img {
+    width: 130px;
+    height: 37px;
+}
+
+.page-login .page-login-social .social-login img:hover {
+    opacity: .8;
+}
+
+.page-login .line-break {
+    max-width: 310px;
+    margin: 20px auto 20px;
+    text-align: center;
+    position: relative;
+}
+
+.page-login .line-break span {
+    display: inline-block;
+    font-size: 12px;
+    color: #777;
+    padding: 1px 20px;
+    border-radius: 15px;
+    background-color: var(--white-color);
+    border: 1px solid #dadade;
+}
+
+.page-login .line-break span::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #d6d6d6;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+/* FORGOT-PASSWORD */
+.forgot-password {
+    margin-top: 20px;
+    color: var(--orange-color);
+    display: block;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    transition: all .1s linear;
+}
+
+.forgot-password:hover {
+    color: var(--text-color-black);
+}
+/* TEXT-LOGIN-HERE */
+.text-login p {
+    font-size: 1.3rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.text-login p a {
+    text-decoration: none;
+    color: var(--orange-color);
+}
+.text-login p a:hover {
+    color: var(--text-color-black);
+    transition: all .1s linear;
+}
+
+/* TEXT-REGISTER  */
+.text-register p {
+    font-size: 1.3rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.text-register p a {
+    text-decoration: none;
+    color: var(--orange-color);
+}
+.text-register p a:hover {
+    color: var(--text-color-black);
+    transition: all .1s linear;
+}
+
+/* ==== [LIEN-HE PAGE] ==== */
+.page-contact .page-contact-title {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.page-contact .page-contact-title .title-head {
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page-contact p {
+    font-size: 1.4rem;
+    letter-spacing: 0.7px;
+    line-height: 24px;
+}
+
+.page-contact .form-control {
+    background-color: #fff;
+    border-color: #c8c8d4;
+}
+
+.page-contact .form-submit {
+    width: 100%;
+}
+
+.page-contact .page-contact-info {
+    border-radius: 10px;
+    background-color: #f6f6f7;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.page-contact .page-contact-info .title {
+    border-bottom: 3px solid #d7d8d9;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 22px;
+    margin-bottom: 8px;
+    color: var(--black-color);
+}
+
+.page-contact .page-contact-info li {
+    list-style: none;
+}
+
+.page-contact .page-contact-info .list-menu {
+    font-size: 1.4rem;
+    letter-spacing: 0.6px;
+    line-height: 30px;
+    padding: 0;
+}
+
+.page-contact .page-contact-info .list-menu a {
+    color: var(--black-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.page-contact .page-contact-info .social-icon {
+    padding: 0;
+    margin: 0;
+}
+
+.page-contact .page-contact-info .social-icon li {
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.page-contact .page-contact-info .social-icon li:hover {
+    opacity: .7;
+}
+
+
+.page-contact .page-contact-info .social-icon li+li {
+    margin-left: 7px;
+}
+
+.page-contact .page-contact-info .social-icon li a {
+    display: block;
+    height: 35px;
+    width: 35px;
+    color: var(--white-color);
+    line-height: 35px;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.social-icon .twitter {
+    background-color: #1da1f2;
+}
+
+.social-icon .facebook {
+    background-color: #3b5998;
+}
+
+.social-icon .instagram {
+    background-color: #e1306c;
+}
+
+.social-icon .youtube {
+    background-color: #ff0000;
+}
+.page-contact .page-contact-content p span {
+    color: var(--orange-color);
+}
+
+/* BOX MAP CONTACT */
+.page-contact .page-contact-map {
+    border-top: 1px solid #f5f5f5;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.page-contact .page-contact-map .page-login .title-head {
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-contact .box-map {
+    overflow: hidden;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }

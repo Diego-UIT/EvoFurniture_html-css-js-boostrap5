@@ -12,6 +12,14 @@
         padding: 6px 10px;
         font-size: 14px;
     }
+
+    .slider-img-product {
+        margin: 0;
+    }
+
+    .list-bestsell .evo-three-col-slick .evo-product-item .product-detail .box-pro-price {
+        display: block;
+    }
 }
 
 @media (max-width: 991px) {
@@ -131,6 +139,16 @@
         font-size: 11px;
     }
 
+    /* SIDEBAR-LEFT */
+    .evo-sidebar {
+        display: none;
+    }
+
+    .related-product {
+        width: 100%;
+    }
+
+    
 }
 
 @media (max-width: 767px) {
@@ -141,6 +159,36 @@
 
     .header .evo-top-header .slogan p {
         font-size: 1.1rem;
+    }
+
+    .sort-product {
+        display: none;
+    }
+        
+}
+
+@media (max-width: 480px) {
+    .col-xs-6 {
+        width: 50%;
+        float: left;
+    }
+
+    /* SECTION-2 MOBILE */
+    .section-2 .section-banner .btn-type .figcaption {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+    }
+
+    .section-2 .section-banner .btn-type .figcaption .banner-content {
+        font-size: 15px;
+        line-height: 7px;
+        padding: 0px 10px 13px 10px;
+    }
+
+    .section-2 .section-banner .btn-type .figcaption .banner-content span {
+        font-size: 13px;
+        line-height: 25px;
     }
 
 }

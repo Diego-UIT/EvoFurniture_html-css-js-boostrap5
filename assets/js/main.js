@@ -23,11 +23,9 @@ owlNewProduct.owlCarousel({
     loop:true,
     margin:10,
     responsiveClass:true,
+    smartSpeed: 800,
     responsive:{
         0:{
-            items:1,
-        },
-        400:{
             items:2,
         },
         600:{
@@ -50,6 +48,7 @@ owlBlogs.owlCarousel({
     loop:true,
     margin:10,
     responsiveClass:true,
+    smartSpeed: 800,
     responsive:{
         0:{
             items:1,
@@ -80,18 +79,16 @@ owlBrand.owlCarousel({
     loop:true,
     margin:10,
     responsiveClass:true,
+    smartSpeed: 800,
     responsive:{
         0:{
             items:3,
-            nav:true,
         },
         600:{
             items:5,
-            nav:true,
         },
         1000:{
             items:6,
-            nav:true,
             loop:false
         }
     }
@@ -124,28 +121,121 @@ jQuery(document).ready(function($){
 // =============================================
 // SEARCH - AUTOCOMPLETE - INPUT
 // =============================================
-const searchAuto =  $( "#tags" )
-console.log(searchAuto)
+// const searchAuto =  $( "#tags" )
+// console.log(searchAuto)
 
-$( function() {
-    var availableTags = [
-      "Bàn",
-      "Bộ bàn ăn",
-      "Giường",
-      "Ghế",
-      "Tủ",
-      "Sofa",
-      "Ghế phòng khách",
-      "Nệm",
-      "Đồng hồ",
-      "Khung & Tranh ảnh",
-      "Tinh dầu & Túi thơm",
-      "Nến",
-      "Đồ dùng văn phòng",
-    ];
-    searchAuto.autocomplete({
-      source: availableTags
-    });
-  } );
+// $( function() {
+//     var availableTags = [
+//       "Bàn",
+//       "Bộ bàn ăn",
+//       "Giường",
+//       "Ghế",
+//       "Tủ",
+//       "Sofa",
+//       "Ghế phòng khách",
+//       "Nệm",
+//       "Đồng hồ",
+//       "Khung & Tranh ảnh",
+//       "Tinh dầu & Túi thơm",
+//       "Nến",
+//       "Đồ dùng văn phòng",
+//     ];
+//     searchAuto.autocomplete({
+//       source: availableTags
+//     });
+//   } );
 
-  
+// =============================================
+// ALL-PRODUCT - CATEGORY-OWL-CAROUSEL
+// =============================================
+const owlCategory =  $(".owl-carousel.owl-category")
+
+owlCategory.owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    smartSpeed: 800,
+    responsive:{
+        0:{
+            items:2,
+            nav:true
+        },
+        600:{
+            items:4,
+            nav:true
+        },
+        1000:{
+            items:6,
+            nav:true,
+            loop:false
+        },
+    }
+})
+
+
+// =============================================
+// OPEN-MENU - SIDEBAR
+// =============================================
+const dropMenu = $(".dropdown-menu1")
+const plus =  $(".nav-item")
+
+plus.click(() => {
+    dropMenu.toggle()
+})
+
+// =============================================
+// RELATED-PRODUCT - OWL-CAROUSEL-CENTER
+// =============================================
+const owlRelated =  $(".owl-carousel.owl-related-product")
+
+owlRelated.owlCarousel({
+    
+    loop: false,
+    loop:true,
+    margin:10,
+    responsive:{
+        0:{
+            items:2,
+        },
+        1000:{
+            items:3,
+            loop: false
+        }
+    }
+})
+
+// =============================================
+// DETAIL-PRODUCT - OWL-CAROUSEL
+// =============================================
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+
+  for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+
+}

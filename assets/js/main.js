@@ -205,6 +205,37 @@ owlRelated.owlCarousel({
 })
 
 // =============================================
+// TAB-UI-PRODUCT 
+// =============================================
+
+const tabs = document.querySelectorAll('.tab-item')
+const panes = document.querySelectorAll('.tab-pane')
+const tabActive = document.querySelector('.tab-item.active')
+const line = document.querySelector('.tabs .line')
+
+line.style.left = tabActive.offsetLeft + 'px'
+line.style.width = tabActive.offsetWidth + 'px'
+
+tabs.forEach((tab, index) => {
+    const pane = panes[index]
+
+    tab.onclick = function() {
+        const tabActive = document.querySelector('.tab-item.active')
+        const tabPane = document.querySelector('.tab-pane.active')
+
+        tabActive.classList.remove('active')
+        tabPane.classList.remove('active')
+
+        line.style.left = this.offsetLeft + 'px'
+        line.style.width = this.offsetWidth + 'px'
+
+        this.classList.add('active')
+        pane.classList.add('active')
+    }
+})
+
+
+// =============================================
 // DETAIL-PRODUCT - OWL-CAROUSEL
 // =============================================
 var slideIndex = 1;
@@ -239,3 +270,5 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex-1].alt;
 
 }
+
+

@@ -409,25 +409,147 @@
                                         </div>
                                     </div>
                                     <div class="form-product">
-                                        <form action="/cart/add">
-                                            <div class="qty-ant">
-                                                <label for="">Số lượng:</label>
-                                                <div class="custom-btn-number">
-                                                    <button class="btn-cts btn-minus">-</button>
-                                                    <input type="text" id="qty" value="1">
-                                                    <button class="btn-cts btn-plus">+</button>
+                                        <div class="qty-ant">
+                                            <label for="">Số lượng:</label>
+                                            <div class="custom-btn-number">
+                                                <button class="btn-cts btn-minus">-</button>
+                                                <input type="text" id="qty" value="1">
+                                                <button class="btn-cts btn-plus">+</button>
+                                            </div>
+                                        </div>
+                                        <!-- Button open cart modal -->
+                                        <div class="btn-buy">
+                                            <button type="submit" 
+                                                    class="btn btn-gray btn-lg add-to-cart"
+                                                    data-bs-toggle="modal" data-bs-target="#cartModal">
+                                                <span>
+                                                    Mua ngay với giá 
+                                                    <b class="product-price">1.290.000₫</b>
+                                                </span>
+                                                <span class="txt-add">Đặt mua giao hàng tận nơi</span>
+                                            </button>
+                                        </div>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="cartModalLabel">
+                                                    BẠN ĐÃ THÊM
+                                                    <span class="cart-name">GIƯỜNG NGỦ GỖ CHẤT LƯỢNG CAO CHO GIA ĐÌNH - CAM</span>
+                                                    VÀO GIỎ HÀNG
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="title-quantily">
+                                                        <a href="./cart.html">Xem giỏ hàng</a>
+                                                    </div>
+                                                    <div class="content-cart">
+                                                        <div class="thead-popup">
+                                                            <div style="width: 55%" class="text-left">Sản phẩm</div>
+                                                            <div style="width: 15%" class="text-center">Đơn giá</div>
+                                                            <div style="width: 15%" class="text-center">Số lượng</div>
+                                                            <div style="width: 15%" class="text-center">Thành tiền</div>
+                                                        </div>
+                                                        <div class="tbody-popup">
+                                                            <div class="item-popup productid-01">
+                                                                <div style="width: 55%" class="text-left">
+                                                                    <div class="item-image">
+                                                                        <img src="./assets/img/All-products/giuong-ngu-go-chat-luong-cao-cho-gia-dinh-ghs-9071-ava.jpg" alt="" width="80">
+                                                                    </div>
+                                                                    <div class="item-info">
+                                                                        <p class="item-name">Giường ngủ gỗ chất lượng cao cho gia đình</p>
+                                                                        <p class="item-remove">
+                                                                            <a href="" class="remove-item-cart">
+                                                                                <i class="fas fa-times"></i>
+                                                                                Bỏ sản phẩm
+                                                                            </a>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div style="width: 15%" class="text-center">
+                                                                    <div class="item-price">
+                                                                        <span class="price price-change">1.290.000₫</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div style="width: 15%;">
+                                                                    <div class="item-count">
+                                                                        <div class="custom-btn-number">
+                                                                            <button class="btn-cts btn-minus">-</button>
+                                                                            <input type="text" id="qty" value="1">
+                                                                            <button class="btn-cts btn-plus">+</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div style="width: 15%" class="text-center">
+                                                                    <span class="cart-price">
+                                                                        <span class="price">2.580.000₫</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item-popup productid-02">
+                                                                <div style="width: 55%" class="text-left">
+                                                                    <div class="item-image">
+                                                                        <img src="./assets/img/All-products/ezgif.jpg" alt="" width="80">
+                                                                    </div>
+                                                                    <div class="item-info">
+                                                                        <p class="item-name">Giường ngủ gỗ chất lượng cao cho gia đình</p>
+                                                                        <p class="item-remove">
+                                                                            <a href="" class="remove-item-cart">
+                                                                                <i class="fas fa-times"></i>
+                                                                                Bỏ sản phẩm
+                                                                            </a>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div style="width: 15%" class="text-center">
+                                                                    <div class="item-price">
+                                                                        <span class="price price-change">1.290.000₫</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div style="width: 15%;">
+                                                                    <div class="item-count">
+                                                                        <div class="custom-btn-number">
+                                                                            <button class="btn-cts btn-minus">-</button>
+                                                                            <input type="text" id="qty" value="1">
+                                                                            <button class="btn-cts btn-plus">+</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div style="width: 15%" class="text-center">
+                                                                    <span class="cart-price">
+                                                                        <span class="price">2.580.000₫</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tfoot-popup">
+                                                            <div class="pull-left">
+                                                                <a href="">
+                                                                    <span data-bs-dismiss="modal">
+                                                                        <i class="fas fa-arrow-left"></i>
+                                                                        Tiếp tục mua hàng
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="pull-right">
+                                                                <p>
+                                                                    Thành tiền:
+                                                                    <span class="total-price">43.860.000₫</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer"> 
+                                                    <button type="button" class="btn btn-lg">Thanh toán đơn hàng</button>
                                                 </div>
                                             </div>
-                                            <div class="btn-buy">
-                                                <button type="submit" class="btn btn-gray btn-lg add-to-cart">
-                                                    <span>
-                                                        Mua ngay với giá 
-                                                        <b class="product-price">1.290.000₫</b>
-                                                    </span>
-                                                    <span class="txt-add">Đặt mua giao hàng tận nơi</span>
-                                                </button>
                                             </div>
-                                        </form>
+                                        </div>
+                                        <!-- <form>
+                                        </form> -->
                                     </div>
                                     <div class="call-payment">
                                         <div class="hotline-product">
@@ -840,7 +962,8 @@
             <i class="fas fa-angle-up"></i>
         </div>
     </footer>
-    <script src="./assets/js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="./assets/js/jquery-ui.min.js"></script>

@@ -358,36 +358,36 @@
                     <div class="line-break">
                         <span>hoặc</span>
                     </div>
-                    <form action="" class="form" id="form-2">
+                    <form action="" class="form" id="form-1">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstname" class="form-label">Họ*</label>
-                                    <input id="firstname" type="text" class="form-control" placeholder="Nhập Họ">
+                                    <input id="firstname" name="firstname" type="text" class="form-control" placeholder="Nhập Họ">
                                     <span class="form-message"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="lastname" class="form-label">Tên*</label>
-                                    <input id="lastname" type="text" class="form-control" placeholder="Nhập Tên">
+                                    <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Nhập Tên">
                                     <span class="form-message"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="phoneNumber" class="form-label">Số điện thoại*</label>
-                            <input id="phoneNumber" type="text" class="form-control" placeholder="Nhập Số Điện Thoại">
+                            <input id="phoneNumber" name="phoneNumber" type="text" class="form-control" placeholder="Nhập Số Điện Thoại">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">Email*</label>
-                            <input id="email" type="text" class="form-control" placeholder="Nhập Địa Chỉ Email">
+                            <input id="email" name="email" type="text" class="form-control" placeholder="Nhập Địa Chỉ Email">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
                             <label for="password" class="form-label">Mật khẩu*</label>
-                            <input id="password" type="password" class="form-control" placeholder="Nhập mật khẩu">
+                            <input id="password" name="password" type="password" class="form-control" placeholder="Nhập mật khẩu">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
@@ -398,7 +398,7 @@
                         <button class="form-submit">Đăng ký</button>
                         <div class="text-register text-center mt-4">
                             <p>
-                                <a href="">Đăng nhập</a>
+                                <a href="./login.html">Đăng nhập</a>
                             </p>
                         </div>
                     </form>
@@ -528,29 +528,32 @@
     <script src="./assets/js/jquery-ui.min.js"></script>
     <script src="./assets/js/owl.carousel.min.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/tabs.js"></script>
     <script src="./assets/js/validator.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
         Validator({
-            form: '#form-2',
-            errorSelector: '.form-message',
-            rules: [
-                Validator.isRequired('#firstname'),
-                Validator.isRequired('#lastname'),
-                Validator.isRequired('#phoneNumber'),
-                Validator.isPhoneNumber('#phoneNumber', 'Số máy quý khách vừa nhập là số không có thực'),
-                Validator.isRequired('#email'),
-                Validator.isEmail('#email', 'Vui lòng nhập Email'),
-                Validator.isRequired('#password'),
-                Validator.minLength('#password', 5),
-                Validator.isConfirmed('#password-confirm', () => {
-                    return document.querySelector('#form-1 #password').value
-                }, 'Mật khẩu không trùng')
-            ],
-            onSubmit: (data) => {
-                console.log(data)
-            }
+          form: '#form-1',
+          formGroupSelector: '.form-group',
+          errorSelector: '.form-message',
+          rules: [
+            Validator.isRequired('#firstname', 'Vui lòng nhập họ của bạn!'),
+            Validator.isRequired('#lastname', 'Vui lòng nhập tên của bạn!'),
+            Validator.isRequired('#phoneNumber', 'Vui lòng nhập số điện thoại!'),
+            Validator.isPhoneNumber('#phoneNumber', 'Số máy quý khách vừa nhập là số không có thực!'),
+            Validator.isRequired('#email', 'Vui lòng nhập email!'),
+            Validator.isEmail('#email'),
+            Validator.minLength('#password', 6),
+            Validator.isRequired('#password-confirm'),
+            Validator.isConfirmed('#password-confirm', function () {
+              return document.querySelector('#form-1 #password').value;
+            }, 'Mật khẩu nhập lại không chính xác')
+          ],
+          onSubmit: function (data) {
+            // Call API
+            console.log(data);
+          }
         })
+    })
     </script>
 </body>
 </html> 

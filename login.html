@@ -358,15 +358,15 @@
                     <div class="line-break">
                         <span>hoặc</span>
                     </div>
-                    <form action="" class="form" id="form-1">
+                    <form action="" class="form" id="form-2">
                         <div class="form-group">
                             <label for="email" class="form-label">Email*</label>
-                            <input id="email" type="text" class="form-control" placeholder="Nhập Địa Chỉ Email">
+                            <input id="email" name="email" type="text" class="form-control" placeholder="Nhập Địa Chỉ Email">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
                             <label for="password" class="form-label">Mật khẩu*</label>
-                            <input id="password" type="password" class="form-control" placeholder="Nhập mật khẩu">
+                            <input id="password" name="password" type="password" class="form-control" placeholder="Nhập mật khẩu">
                             <span class="form-message"></span>
                         </div>
                         <button class="form-submit">Đăng nhập</button>
@@ -509,8 +509,10 @@
     <script src="./assets/js/tabs.js"></script>
     <script src="./assets/js/validator.js"></script>
     <script>
-        Validator({
-            form: '#form-1',
+        document.addEventListener('DOMContentLoaded', function () {
+            Validator({
+            form: '#form-2',
+            formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
                 Validator.isRequired('#email'),
@@ -522,6 +524,7 @@
                 console.log(data)
             }
         })
+    })
     </script>
 </body>
 </html> 

@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <!-- ========== ICON FONTS ========== -->
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
-    <script src="./assets/js/jquery-3.6.0.min.js"></script>
-
 </head>
 <body>
     <!-- ========== HEADER ========== -->
@@ -64,16 +62,16 @@
                     </a>
                 </div>
                 <div class="col-md-5 evo-header-search">
-                    <form action="/search" method="GET">
-                        <div class="input-group">
-                            <input id="tags" onkeyup="myFunction()" type="text" name="query" class="form-control search-auto" placeholder="Đồ dùng văn phòng...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </span>    
-                        </div>
-                    </form>
+                    <div class="input-group">
+                        <input id="tags" type="text" name="query" class="form-control search-auto" placeholder="Đồ dùng văn phòng...">
+                        <a href="./search.html" class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </a>    
+                    </div>
+                    <!-- <form action="" method="">
+                    </form> -->
                 </div>
                 <div class="col-md-4 evo-header-hotline-cart">
                     <div class="hotline">
@@ -255,10 +253,10 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/" class="nav-link">Hàng mới về</a>
+                                    <a href="" class="nav-link">Hàng mới về</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/" class="nav-link">Tin tức</a>
+                                    <a href="" class="nav-link">Tin tức</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/lien-he.html" class="nav-link">Liên hệ</a>
@@ -284,7 +282,7 @@
                     </div>
                     <div class="account-mobile">
                         <a href="/login.html">Đăng nhập</a>
-                        <a href="">Đăng ký</a>
+                        <a href="/register.html">Đăng ký</a>
                     </div>
                     <div class="main-menu-mobile">
                         <div class="nav-cate">
@@ -363,7 +361,115 @@
                                             <div class="owl-carousel owl-product owl-theme">
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
-                                                        <a href="">
+                                                        <a href="./detail-sanpham.html">
+                                                            <img class="img-prd" src="./assets/img/All-products/giuong-ngu-go.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="button-add">
+                                                        <button>
+                                                            <i class="far fa-check-square"></i>
+                                                        </button>
+                                                        <button class="btn-cart" type="submit"
+                                                        data-bs-toggle="modal" data-bs-target="#cartModal" onClick="cartLS.add({id: 1, name: 'Giường ngủ gỗ chất lượng cao cho gia đình', img:'giuong-ngu-go', price: 300})">
+                                                            <i class="fas fa-shopping-bag"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="product-detail">
+                                                        <div class="pro-brand">
+                                                            <a href="">Evo Nội Thất</a>
+                                                        </div>
+                                                        <h3>
+                                                            <a href="./detail-sanpham.html" class="pro-name">Giường ngủ gỗ chất lượng cao cho gia đình</a>
+                                                        </h3>
+                                                        <p class="pro-price">300.000₫</p>
+                                                    </div>
+                                                </div>
+                                                <div class="evo-product-block-item ">
+                                                    <div class="product-img">
+                                                        <a href="./detail-sanpham.html">
+                                                            <img class="img-prd" src="./assets/img/All-products/gia-sach-go.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="button-add">
+                                                        <button>
+                                                            <i class="far fa-check-square"></i>
+                                                        </button>
+                                                        <button class="btn-cart" type="submit"
+                                                        data-bs-toggle="modal" data-bs-target="#cartModal"onClick="cartLS.add({id: 2, name: 'Giá sách gỗ tự nhiên thiết kế đẹp', img:'gia-sach-go', price: 350})">
+                                                            <i class="fas fa-shopping-bag"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="product-detail">
+                                                        <div class="pro-brand">
+                                                            <a href="">Evo Nội Thất</a>
+                                                        </div>
+                                                        <h3>
+                                                            <a href="./detail-sanpham.html" class="pro-name">Giá sách gỗ tự nhiên thiết kế đẹp</a>
+                                                        </h3>
+                                                        <p class="pro-price">350.000₫</p>
+                                                    </div>
+                                                </div>
+                                                <div class="evo-product-block-item ">
+                                                    <div class="product-img">
+                                                        <a href="./detail-sanpham.html">
+                                                            <img class="img-prd" src="./assets/img/All-products/tu-bep-gia-dinh.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="button-add">
+                                                        <button>
+                                                            <i class="far fa-check-square"></i>
+                                                        </button>
+                                                        <button class="btn-cart" type="submit"
+                                                        data-bs-toggle="modal" data-bs-target="#cartModal" onClick="cartLS.add({id: 3, name: 'Tủ bếp gia đình gỗ sồi tự nhiên thiết kế hiện đại', img:'tu-bep-gia-dinh', price: 400})">
+                                                            <i class="fas fa-shopping-bag"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="product-detail">
+                                                        <div class="pro-brand">
+                                                            <a href="">Evo Nội Thất</a>
+                                                        </div>
+                                                        <h3>
+                                                            <a href="./detail-sanpham.html" class="pro-name">Tủ bếp gia đình gỗ sồi tự nhiên thiết kế hiện đại</a>
+                                                        </h3>
+                                                        <p class="pro-price">400.000₫</p>
+                                                    </div>
+                                                </div>
+                                                <div class="evo-product-block-item ">
+                                                    <div class="product-img">
+                                                        <a href="./detail-sanpham.html">
+                                                            <img class="img-prd" src="./assets/img/All-products/tu-bep-go-hien-dai.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="button-add">
+                                                        <button>
+                                                            <i class="far fa-check-square"></i>
+                                                        </button>
+                                                        <button class="btn-cart" type="submit"
+                                                        data-bs-toggle="modal" data-bs-target="#cartModal" onClick="cartLS.add({id: 4, name: 'Tủ bếp gỗ tự nhiên thiết kế đa năng đẹp hiện đại', img:'tu-bep-go-hien-dai', price: 550})">
+                                                            <i class="fas fa-shopping-bag"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="product-detail">
+                                                        <div class="pro-brand">
+                                                            <a href="">Evo Nội Thất</a>
+                                                        </div>
+                                                        <h3>
+                                                            <a href="./detail-sanpham.html" class="pro-name">Tủ bếp gỗ tự nhiên thiết kế đa năng đẹp hiện đại</a>
+                                                        </h3>
+                                                        <p class="pro-price">500.000₫</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="owl-carousel owl-product owl-theme">
+                                                <div class="evo-product-block-item ">
+                                                    <div class="product-img">
+                                                        <a href="./detail-sanpham.html">
                                                             <img class="img-prd" src="./assets/img/All-products/giuong-ngu-go.jpg" alt="">
                                                         </a>
                                                     </div>
@@ -380,11 +486,19 @@
                                                             <a href="">Evo Nội Thất</a>
                                                         </div>
                                                         <h3>
-                                                            <a href="" class="pro-name">Giường ngủ gỗ</a>
+                                                            <a href="./detail-sanpham.html" class="pro-name">Giường ngủ gỗ</a>
                                                         </h3>
-                                                        <p class="pro-price">500</p>
+                                                        <p class="pro-price">500.000₫</p>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="owl-carousel owl-product owl-theme">
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
                                                         <a href="">
@@ -406,10 +520,9 @@
                                                         <h3>
                                                             <a href="" class="pro-name">Giá sách gỗ</a>
                                                         </h3>
-                                                        <p class="pro-price">400</p>
+                                                        <p class="pro-price">400.000₫</p>
                                                     </div>
                                                 </div>
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -418,22 +531,30 @@
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="owl-carousel owl-product owl-theme">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div class="owl-carousel owl-product owl-theme">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div class="owl-carousel owl-product owl-theme">
+                                                <div class="evo-product-block-item ">
+                                                    <div class="product-img">
+                                                        <a href="./detail-sanpham.html">
+                                                            <img class="img-prd" src="./assets/img/All-products/tu-bep-gia-dinh.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="button-add">
+                                                        <button>
+                                                            <i class="far fa-check-square"></i>
+                                                        </button>
+                                                        <button class="btn-cart" onClick="cartLS.add({id: 3, name: 'Tủ bếp gia đình gỗ sồi tự nhiên thiết kế hiện đại', img:'tu-bep-gia-dinh', price: 400})">
+                                                            <i class="fas fa-shopping-bag"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="product-detail">
+                                                        <div class="pro-brand">
+                                                            <a href="">Evo Nội Thất</a>
+                                                        </div>
+                                                        <h3>
+                                                            <a href="./detail-sanpham.html" class="pro-name">Tủ bếp gia đình gỗ sồi tự nhiên thiết kế hiện đại</a>
+                                                        </h3>
+                                                        <p class="pro-price">400.000₫</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -629,7 +750,7 @@
         <div class="section-trending">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-12" style="padding-right: 4.75rem;">
                         <div class="banner-item">
                             <div class="banner-img">
                                 <a href="">
@@ -646,7 +767,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-12" style="padding-left: 4.75rem;">
                         <div class="banner-item banner-item-last">
                             <div class="banner-img">
                                 <a href="">
@@ -1172,12 +1293,64 @@
                 </div>
             </div>
         </div>
+        <!--  ========== CART-MODAL D-NONE ========== -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cartModalLabel">
+                            BẠN ĐÃ THÊM
+                            <span class="cart-name">GIƯỜNG NGỦ GỖ CHẤT LƯỢNG CAO CHO GIA ĐÌNH - CAM</span>
+                            VÀO GIỎ HÀNG
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="title-quantily">
+                            <a href="./cart.html">Xem giỏ hàng</a>
+                        </div>
+                        <div class="content-cart">
+                            <div class="thead-popup">
+                                <div style="width: 55%" class="text-left">Sản phẩm</div>
+                                <div style="width: 15%" class="text-center">Đơn giá</div>
+                                <div style="width: 15%" class="text-center">Số lượng</div>
+                                <div style="width: 15%" class="text-center">Thành tiền</div>
+                            </div>
+                            <div class="tbody-popup">
+                                <!-- ...Render -->
+                            </div>
+                            <div class="tfoot-popup">
+                                <div class="pull-left">
+                                    <a href="">
+                                        <span data-bs-dismiss="modal">
+                                            <i class="fas fa-arrow-left"></i>
+                                            Tiếp tục mua hàng
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="pull-right">
+                                    <p>
+                                        Thành tiền:
+                                        <span id="total-price">43.860.000₫</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"> 
+                        <button type="button" class="btn btn-lg">Thanh toán đơn hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+    <!-- ========== JAVASCRIPT ========== -->
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/cart-localstorage.min.js"></script>
     <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html> 

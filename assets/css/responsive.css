@@ -33,7 +33,7 @@
 
     /* MOBILE MENU NAV  */
     .toggle-menu-button .line {
-        display: block;
+        display: block !important;
     }
 
     .nav {
@@ -178,7 +178,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     
     .logo img {
         max-height: 55px !important;
@@ -210,6 +210,11 @@
 
     .shopping-cart .price {
         font-size: 13px !important;
+    }
+
+    /* Cart-Modal-Mobile */
+    .modal-body .content-cart .tbody-popup .item-popup .item-count {
+        padding-left: 0;
     }
 }
 

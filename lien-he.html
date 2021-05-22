@@ -353,17 +353,17 @@
                     <form action="" class="form" id="form-3">
                         <div class="form-group">
                             <label for="fullname" class="form-label">Họ và tên*</label>
-                            <input id="fullname" type="text" class="form-control" placeholder="Nhập Họ và Tên">
+                            <input id="fullname" name="fullname" type="text" class="form-control" placeholder="Nhập Họ và Tên">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">Email*</label>
-                            <input id="email" type="text" class="form-control" placeholder="Nhập Địa Chỉ Email">
+                            <input id="email" name="email" type="text" class="form-control" placeholder="Nhập Địa Chỉ Email">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
                             <label for="phoneNumber" class="form-label">Điện thoại*</label>
-                            <input id="phoneNumber" type="text" class="form-control" placeholder="Nhập Số Điện Thoại">
+                            <input id="phoneNumber" name="phoneNumberne" type="text" class="form-control" placeholder="Nhập Số Điện Thoại">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
@@ -579,19 +579,22 @@
     <script src="./assets/js/tabs.js"></script>
     <script src="./assets/js/validator.js"></script>
     <script>
-        Validator({
-            form: '#form-3',
-            errorSelector: '.form-message',
-            rules: [
-                Validator.isRequired('#fullname'),
-                Validator.isRequired('#email'),
-                Validator.isEmail('#email', 'Vui lòng nhập Email'),
-                Validator.isRequired('#phoneNumber'),
-                Validator.isPhoneNumber('#phoneNumber', 'Số máy quý khách vừa nhập là số không có thực'),
-            ],
-            onSubmit: (data) => {
-                console.log(data)
-            }
+        document.addEventListener('DOMContentLoaded', function () {
+            Validator({
+                form: '#form-3',
+                errorSelector: '.form-message',
+                formGroupSelector: '.form-group',
+                rules: [
+                    Validator.isRequired('#fullname'),
+                    Validator.isRequired('#email'),
+                    Validator.isEmail('#email', 'Vui lòng nhập Email'),
+                    Validator.isRequired('#phoneNumber'),
+                    Validator.isPhoneNumber('#phoneNumber', 'Số máy quý khách vừa nhập là số không có thực'),
+                ],
+                onSubmit: (data) => {
+                    console.log(data)
+                }
+            })
         })
     </script>
 </body>

@@ -602,6 +602,7 @@ progress {
   margin-left: auto;
 }
 
+
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 540px;
@@ -5172,7 +5173,7 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
 }
 .toast:not(.showing):not(.show) {
-  opacity: 0;
+  opacity: 1;
 }
 .toast.hide {
   display: none;

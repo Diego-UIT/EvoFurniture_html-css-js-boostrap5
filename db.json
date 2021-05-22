@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "img": "giuong-ngu-go",
+      "name": "Giường ngủ gỗ chất lượng cao cho gia đình",
+      "price": "300"
+    },
+    {
+      "id": 2,
+      "img": "gia-sach-go",
+      "name": "Giá sách gỗ tự nhiên thiết kế đẹp",
+      "price": "350"
+    },
+    {
+      "id": 3,
+      "img": "tu-bep-gia-dinh",
+      "name": "Tủ bếp gia đình gỗ sồi tự nhiên thiết kế hiện đại",
+      "price": "400"
+    },
+    {
+      "id": 4,
+      "img": "tu-bep-go-hien-dai",
+      "name": "Tủ bếp gỗ tự nhiên thiết kế đa năng đẹp hiện đại",
+      "price": "550"
+    }
+  ]
+}

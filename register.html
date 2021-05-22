@@ -13,10 +13,12 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/css/validator.css">
+    <link rel="stylesheet" href="./assets/css/toast-message.css">
     <!-- ========== ICON FONTS ========== -->
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
 </head>
 <body>
+    <div id="toast"></div>
     <!-- ========== HEADER ========== -->
     <header class="header">
         <div class="evo-top-header">
@@ -292,13 +294,13 @@
                                     </a>
                                 </li>
                                 <li class="menu-item-count">
-                                    <a href="/">
+                                    <a href="/gioi-thieu.html">
                                         <i class="fas fa-angle-right"></i>
                                         Giới thiệu
                                     </a>
                                 </li>
                                 <li class="menu-item-count">
-                                    <a href="/">
+                                    <a href="/all-sanpham.html">
                                         <i class="fas fa-angle-right"></i>
                                         Sản phẩm
                                     </a>
@@ -316,7 +318,7 @@
                                     </a>
                                 </li>
                                 <li class="menu-item-count">
-                                    <a href="/">
+                                    <a href="/lien-he.html">
                                         <i class="fas fa-angle-right"></i>
                                         Liên hệ
                                     </a>
@@ -395,13 +397,13 @@
                             <input id="password-confirm" type="password" class="form-control" placeholder="Nhập lại mật khẩu">
                             <span class="form-message"></span>
                         </div>
-                        <button class="form-submit">Đăng ký</button>
+                        <button class="form-submit" onclick="showToastSuccess()">Đăng ký</button>
                         <div class="text-register text-center mt-4">
                             <p>
                                 <a href="./login.html">Đăng nhập</a>
                             </p>
                         </div>
-                    </form>
+                    </form>                  
                 </div>
             </div>
         </div>
@@ -529,31 +531,40 @@
     <script src="./assets/js/owl.carousel.min.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/validator.js"></script>
+    <script src="./assets/js/toast-message.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-        Validator({
-          form: '#form-1',
-          formGroupSelector: '.form-group',
-          errorSelector: '.form-message',
-          rules: [
-            Validator.isRequired('#firstname', 'Vui lòng nhập họ của bạn!'),
-            Validator.isRequired('#lastname', 'Vui lòng nhập tên của bạn!'),
-            Validator.isRequired('#phoneNumber', 'Vui lòng nhập số điện thoại!'),
-            Validator.isPhoneNumber('#phoneNumber', 'Số máy quý khách vừa nhập là số không có thực!'),
-            Validator.isRequired('#email', 'Vui lòng nhập email!'),
-            Validator.isEmail('#email'),
-            Validator.minLength('#password', 6),
-            Validator.isRequired('#password-confirm'),
-            Validator.isConfirmed('#password-confirm', function () {
-              return document.querySelector('#form-1 #password').value;
-            }, 'Mật khẩu nhập lại không chính xác')
-          ],
-          onSubmit: function (data) {
-            // Call API
-            console.log(data);
-          }
+            Validator({
+            form: '#form-1',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#firstname', 'Vui lòng nhập họ của bạn!'),
+                Validator.isRequired('#lastname', 'Vui lòng nhập tên của bạn!'),
+                Validator.isRequired('#phoneNumber', 'Vui lòng nhập số điện thoại!'),
+                Validator.isPhoneNumber('#phoneNumber', 'Số máy quý khách vừa nhập là số không có thực!'),
+                Validator.isRequired('#email', 'Vui lòng nhập email!'),
+                Validator.isEmail('#email'),
+                Validator.minLength('#password', 6),
+                Validator.isRequired('#password-confirm'),
+                Validator.isConfirmed('#password-confirm', function () {
+                return document.querySelector('#form-1 #password').value;
+                }, 'Mật khẩu nhập lại không chính xác')
+            ],
+            onSubmit: function (data) {
+                // Call API
+                console.log(data);
+            }
+            })
         })
-    })
+        function showToastSuccess() {
+            toast({
+                title: 'Success',
+                message: 'Xin chúc mừng! Bạn đã đăng ký thành công.',
+                type: 'success',
+                duration: 30000
+            })
+        }
     </script>
 </body>
 </html> 

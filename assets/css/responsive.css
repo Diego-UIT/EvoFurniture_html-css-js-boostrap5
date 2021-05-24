@@ -28,6 +28,87 @@
 
 }
 
+/* ==== [PAYMENT-PAGE] ==== */
+@media (min-width: 1000px) {
+    #payment .banner {
+        display: none;
+    }
+
+    #payment .wrap {
+        padding: 0 2em;
+        max-width: 95em;
+    }
+    
+    #payment .content .wrap {
+        flex-direction: row;
+        
+    }
+
+    #payment .content .wrap .main {
+        width: 68%;
+        padding: 2em 2em 0 2em;
+    }
+
+    #payment .content .main .main-header .logo {
+        display: block;
+    }  
+    
+    #payment .content .main .main-header .logo .logo__image--medium {
+        max-height: 6.28571em;
+    }
+
+    #payment .content .main .main-header .logo-center {
+        text-align: center;
+    }
+    
+
+    #payment .content .wrap .sidebar {
+        width: 32%;
+    }
+
+    #payment .content .sidebar:after {
+        left: 0;
+        background-position: left top;
+        box-shadow: 1px 0 0 #e1e1e1 inset;
+    }
+
+    #payment .content .main .main-content .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    #payment .content .main .main-content .col {
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 0;
+    }
+
+    #payment .content .main .main-content .col.col--two {
+        width: 50%;
+    }
+
+    #payment .hide-on-desktop {
+        display: none !important;
+    }
+
+    #payment .sidebar .sidebar-header,
+    .sidebar-content {
+        padding-left: 2em;
+    }
+
+    #payment .sidebar .sidebar-content .order-summary-section.scroll-over{
+        overflow-y: auto;
+        max-height: calc(100vh - 480px);
+    }
+
+}
+
+@media (max-width: 999px) {
+    .hide-on-mobile {
+        display: none !important;
+    }   
+}
+
 @media (max-width: 991px) {
     
 

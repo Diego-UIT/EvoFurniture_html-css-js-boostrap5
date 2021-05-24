@@ -16,7 +16,6 @@
     display: flex;
     margin-bottom: 16px;
     flex-direction: column;
-    margin-bottom: 25px;
 }
 .form-label,
 .form-message {

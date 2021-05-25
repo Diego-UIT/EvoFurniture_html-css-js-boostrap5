@@ -1,8 +1,4 @@
 @media (max-width: 1024px) {
-    
-    .header .evo-main-nav .main-menu {
-        margin-top: 10px;
-    }
 
     .header .evo-main-nav .main-menu .nav-cate .menu {
         min-height: 267px;
@@ -145,6 +141,7 @@
         display: flex;
         align-items: center;
         flex: auto;
+        width: 100%;
     }
 
     .logo {
@@ -190,10 +187,19 @@
     }
 
     .section-1 .section-tab-san-pham .content .tabs {
-        display: block;
+        display: none;
         text-align: center;
         background-color: var(--white-color);
         box-shadow: 0 0 10px 0 rgb(0 0 0 / 15%);
+    }
+
+    .section-1 .section-tab-san-pham .new-title {
+        margin-left: 2em;
+    }
+
+    /* --- TABS-INPUT-CHECKBOX --- */
+    .tab-input:checked ~ .tabs {
+        display: block !important;
     }
 
     .section-1 .section-tab-san-pham .content .tabs .tab-item {

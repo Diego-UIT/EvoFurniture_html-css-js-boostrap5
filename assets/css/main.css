@@ -253,7 +253,7 @@ ul, li {
 
 .header .evo-main-nav .main-menu .nav-cate .menu .menu-item-count a {
     display: block;
-    padding: 10px 20px;
+    padding: 11.2px 20px;
     color: var(--text-color-black);
     font-size: 15px;
     border-bottom: 1px solid #eee;
@@ -349,6 +349,10 @@ ul, li {
     font-size: 14px;
 }
 
+.header .evo-main-nav .banner {
+    margin-left: -1.5em;
+}
+
 /* ==== MOBILE MENU NAV ==== */
 
 /* --- BUTTON --- */
@@ -359,8 +363,8 @@ ul, li {
   cursor: pointer;
 }
 
-.toggle-menu-button:hover {
-    opacity: .7;
+.toggle-menu-button:hover .line {
+    background-color: var(--orange-color);
 }
 
 .toggle-menu-button .line {
@@ -371,6 +375,7 @@ ul, li {
   margin-bottom: 5px;
   background: var(--black-color);
   transition: all .4s;
+  transition: color .150ms ease;
   border-radius: 1px;
 }
 

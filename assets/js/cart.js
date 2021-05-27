@@ -13,9 +13,14 @@ function renderCart(items) {
     const $countItemsDesktop = document.querySelector(".count_item.desktop")
     const $countItemsMobile = document.querySelector(".count_item.mobile")
     const $countItemsCart = document.querySelector(".count-item")
-    
 
-    $cart.innerHTML = items.map((item) => `
+    if (items.length == 0) {
+
+        $(".cart-empty").removeClass("d-none")
+        $(".cart-in-stock").addClass("d-none")
+
+    } else {
+        $cart.innerHTML = items.map((item) => `
             <tr class="cart-items">
                 <th scope="row">
                     <div class="image">
@@ -43,31 +48,34 @@ function renderCart(items) {
                     </div>
                 </td>
             </tr>`).join("")
+    }
 
-        $cartMobile.innerHTML = items.map((item) => `
-            <div class="d-flex justify-content-between mb-4 cart-mobile">
-                <div class="d-flex product-block-mobile">
-                    <div class="image">
-                        <img src="./assets/img/All-products/${item.img}.jpg" alt="" width="80" height="auto">
-                    </div>
-                    <div class="product-info">
-                        <div class="name">
-                            <span>${item.name}</span>    
-                        </div>
-                        <div class="price">
-                            <span>${format(item.price)}</span>
-                        </div> 
-                    </div>
+    
+
+    $cartMobile.innerHTML = items.map((item) => `
+    <div class="d-flex justify-content-between mb-4 cart-mobile">
+        <div class="d-flex product-block-mobile">
+            <div class="image">
+                <img src="./assets/img/All-products/${item.img}.jpg" alt="" width="80" height="auto">
+            </div>
+            <div class="product-info">
+                <div class="name">
+                    <span>${item.name}</span>    
                 </div>
-                <div class="d-flex mt-4" style="flex-direction: column;">
-                    <div class="custom-btn-number">
-                        <button id="incs"class="btn-cts btn-minus" onClick="cartLS.quantity(${item.id},-1)">-</button>
-                        <input type="text" id="qty" value="${item.quantity}">
-                        <button id="decs" class="btn-cts btn-plus" onClick="cartLS.quantity(${item.id},1)">+</button>
-                    </div>
-                    <button id="deleteButton2" class="btn btn-link" onClick="cartLS.remove(${item.id})">Xóa</button>
-                </div>
-            </div>`).join("")
+                <div class="price">
+                    <span>${format(item.price)}</span>
+                </div> 
+            </div>
+        </div>
+        <div class="d-flex mt-4" style="flex-direction: column;">
+            <div class="custom-btn-number">
+                <button id="incs"class="btn-cts btn-minus" onClick="cartLS.quantity(${item.id},-1)">-</button>
+                <input type="text" id="qty" value="${item.quantity}">
+                <button id="decs" class="btn-cts btn-plus" onClick="cartLS.quantity(${item.id},1)">+</button>
+            </div>
+            <button id="deleteButton2" class="btn btn-link" onClick="cartLS.remove(${item.id})">Xóa</button>
+        </div>
+    </div>`).join("")   
 
     $total.innerHTML = format(cartLS.total())
     $totalPrice.innerHTML = format(cartLS.total())
@@ -81,6 +89,8 @@ cartLS.onChange(renderCart)
 function renderCartModal(items) {
     const $cartModal = document.querySelector(".tbody-popup")
     const $totalModal = document.querySelector("#total-price")
+    const $countItemsDesktop = document.querySelector(".count_item.desktop")
+    const $countItemsMobile = document.querySelector(".count_item.mobile")
 
     $cartModal.innerHTML = items.map((item) => `
         <div class="item-popup">
@@ -120,6 +130,8 @@ function renderCartModal(items) {
         </div>`).join("")
 
     $totalModal.innerHTML = format(cartLS.total())
+    $countItemsDesktop.innerHTML = cartLS.totalCount()
+    $countItemsMobile.innerHTML = cartLS.totalCount()
 }
 renderCartModal(cartLS.list())
 cartLS.onChange(renderCartModal)

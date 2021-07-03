@@ -328,6 +328,7 @@
                         ${format(item.price)}
                     </th>
                 </tr>`).join("")
+
             $totalCheckout.innerHTML = format(cartLS.total())
             $totalCheckoutPrice.innerHTML = format(cartLS.total() + 40)
             $countItemsCheckout.innerHTML = '(' + cartLS.totalCount() + ' sản phẩm)'
@@ -346,6 +347,60 @@
                 duration: 3000
             })
         }
+
+        function showToastSuccess() {
+            toast({
+                title: 'Success',
+                message: 'Đã gửi tới email của bạn!',
+                type: 'success',
+                duration: 3000
+            })
+        }
+
+        // =============================================
+        // RENDER CART TO EMAIL
+        // =============================================
+        var bd
+
+        function cartMail(items) {
+
+            const totalCheckout = document.querySelector("#total")
+            const totalCheckoutMail = format(cartLS.total(totalCheckout))
+            
+            const item = Array.from(items).map(item => `
+                <tbody>
+                        <tr>
+                            <td>${item.name}</td>
+                            <td>${item.quantity}</td>
+                            <td>${format(item.price)}</td>
+                        </tr>
+                </tbody>
+                `).join('');
+                bd = `  Xin chào, đơn hàng của Anh/chị đã được tiếp nhận, chúng tôi sẽ nhanh chóng liên hệ với Anh/chị.<br><br>
+                        <table style="width:500px; text-align:center" cellspacing=”0” cellpadding=”0” width=”640” align=”center” border=”1”>
+                            <thead>
+                                <tr>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Giá</th>
+                                </tr>
+                            </thead>` + item + `<tfoot>
+                                <tr>
+                                    <th colspan="2">
+                                        <div class="text-left">
+                                            <h4 style="color: #f68e2e;margin-top: 13px">Tổng tiền cần thanh toán:</h4>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <span class="pl-2" style="color: #f68e2e; font-size: 18px;" id="total">`+totalCheckoutMail+`</span>
+                                    </th>
+                                </tr>
+                            </tfoot>
+                        </table> `
+                
+        }
+        cartMail(cartLS.list())
+        console.log(bd)
             
         function sendEmail() {
             
@@ -357,20 +412,18 @@
                 return;
             }
 
-            const bd="Hi " +name+", đơn hàng của bạn đã được đăng kí thành công."
-
             Email.send({
 
                 Host: "smtp.gmail.com",
-                Username: "minhchuong.org@gmail.com",
-                Password: "mchuong145",
-                From: "minhchuong.org@gmail.com",
+                Username: "evofurniture.vlog@gmail.com",
+                Password: "Da123456",
+                From: "evofurniture.vlog@gmail.com",
                 To: email,
-                Subject: "Xác nhận đơn hàng: PHIEU ",
+                Subject: "Xác nhận đơn hàng: ",
                 Body: bd
 
             }).then(  
-                message => alert("mail sent successfully")
+                message => showToastSuccess()
             );
         }
     </script>

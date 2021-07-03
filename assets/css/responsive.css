@@ -24,6 +24,13 @@
 
 }
 
+@media (min-width: 1024px) {
+    
+    .products-view-search .row .col-xs-6:nth-child(5n+1) {
+        clear: left;
+    }
+}
+
 /* ==== [PAYMENT-PAGE] ==== */
 @media (min-width: 1000px) {
     #payment .banner {
@@ -262,6 +269,14 @@
     /* Cart-Page */
     .shopping-cart .cart-tbody .shopping-cart-item .image img {
         max-height: 100px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .col-md-15 {
+        width: 20%;
+        float: left;
     }
 }
 

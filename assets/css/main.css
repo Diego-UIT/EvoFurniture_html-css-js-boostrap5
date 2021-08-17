@@ -1860,6 +1860,11 @@ textarea.form-control {
     cursor: pointer;
     font-size: 1.6rem;
     font-weight: normal;
+    transition: color 0.1s ease-in-out;
+}
+
+.evo-sidebar .aside-filter .filter .content .filter-item span:hover {
+    color: var(--orange-color);
 }
 
 /* SORT-PRODUCT */
@@ -2555,13 +2560,13 @@ textarea.form-control {
     font-size: 14px;
 }
 
-.shopping-cart .cart-submit .box-fee #total-price {
+.shopping-cart .cart-submit .box-fee .total {
     float: right;
     font-weight: 700;
     font-size: 16px;
 }
 
-.shopping-cart .cart-submit .box-fee #total-price.amount {
+.shopping-cart .cart-submit .box-fee .total.amount {
     font-size: 22px;
     color: var(--orange-color);
 }
@@ -2594,7 +2599,6 @@ textarea.form-control {
     background: none;
     color: var(--orange-color);
 }
-
 
 .shopping-cart .btn-checkouts {
     border: 1px solid var(--text-color-black);
